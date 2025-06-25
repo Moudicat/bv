@@ -211,14 +211,7 @@ fun UgcContent(
                 targetState = selectedTab,
                 label = "ugc animated content",
                 transitionSpec = {
-                    val coefficient = 10
-                    if (targetState.ordinal < initialState.ordinal) {
-                        fadeIn() + slideInHorizontally { -it / coefficient } togetherWith
-                                fadeOut() + slideOutHorizontally { it / coefficient }
-                    } else {
-                        fadeIn() + slideInHorizontally { it / coefficient } togetherWith
-                                fadeOut() + slideOutHorizontally { -it / coefficient }
-                    }
+                    fadeIn() togetherWith fadeOut()
                 }
             ) { screen ->
                 when (screen) {

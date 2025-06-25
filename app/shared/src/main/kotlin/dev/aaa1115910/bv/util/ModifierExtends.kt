@@ -54,16 +54,14 @@ fun Modifier.focusedBorder(
 }
 
 /**
- * 在没有获取到焦点的时候缩小，以便在获取到焦点的时候“放大”
+ * 在没有获取到焦点的时候缩小，以便在获取到焦点的时候"放大"
  */
 fun Modifier.focusedScale(
     scale: Float = 0.9f
 ): Modifier = composed {
     var hasFocus by remember { mutableStateOf(false) }
-    val scaleValue by animateFloatAsState(
-        targetValue = if (hasFocus) 1f else scale,
-        label = "focused scale"
-    )
+    // 移除动画以减少卡顿，直接使用目标值
+    val scaleValue = if (hasFocus) 1f else scale
 
     onFocusChanged { hasFocus = it.hasFocus }
         .scale(scaleValue)

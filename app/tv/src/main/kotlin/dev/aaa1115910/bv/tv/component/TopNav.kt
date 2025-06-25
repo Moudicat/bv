@@ -45,10 +45,7 @@ fun TopNav(
 
     var selectedNav by remember { mutableStateOf(items.first()) }
     var selectedTabIndex by remember { mutableIntStateOf(0) }
-    val verticalPadding by animateDpAsState(
-        targetValue = if (isLargePadding) 24.dp else 12.dp,
-        label = "top nav vertical padding"
-    )
+    val verticalPadding = if (isLargePadding) 24.dp else 12.dp
 
     Row(
         modifier = modifier

@@ -53,10 +53,7 @@ fun LargeVideoCard(
     val view = LocalView.current
 
     var hasFocus by remember { mutableStateOf(false) }
-    val scale by animateFloatAsState(
-        targetValue = if (hasFocus) 1f else 0.95f,
-        label = "large video card scale"
-    )
+    val scale = if (hasFocus) 1f else 0.95f
 
     val height = 160.dp
     val reasonColor = Color.Red

@@ -49,10 +49,7 @@ fun VideosRow(
     val focusRequester = remember { FocusRequester() }
     var hasFocus by remember { mutableStateOf(false) }
     val titleColor = if (hasFocus) Color.White else Color.White.copy(alpha = 0.6f)
-    val titleFontSize by animateFloatAsState(
-        targetValue = if (hasFocus) 30f else 14f,
-        label = "title font size"
-    )
+    val titleFontSize = if (hasFocus) 30f else 14f
     var rowHeight by remember { mutableStateOf(0.dp) }
 
     Column(

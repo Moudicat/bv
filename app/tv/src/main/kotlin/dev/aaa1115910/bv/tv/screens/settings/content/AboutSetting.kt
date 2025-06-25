@@ -95,7 +95,7 @@ fun AboutSetting(
         }
         Text(
             modifier = Modifier.align(Alignment.BottomCenter),
-            text = "https://github.com/aaa1115910/bv"
+            text = "https://github.com/moudicat/bv -- 基于aaa1115910/bv改造"
         )
     }
 

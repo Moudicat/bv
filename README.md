@@ -4,16 +4,6 @@
 
 # BV
 
-~~Bug Video~~
-
-[![GitHub Release Release](https://img.shields.io/endpoint?url=https%3A%2F%2Fbadge.versions.bv.aaa1115910.dev%2Fgithub%3Fprerelease%3Dfalse)](https://github.com/aaa1115910/bv/releases?q=prerelease%3Afalse)
-[![GitHub Release Pre-Release](https://img.shields.io/endpoint?url=https%3A%2F%2Fbadge.versions.bv.aaa1115910.dev%2Fgithub%3Fprerelease%3Dtrue)](https://github.com/aaa1115910/bv/releases?q=prerelease%3Atrue)
-
-[![Workflow Release](https://github.com/aaa1115910/bv/actions/workflows/release.yml/badge.svg)](https://github.com/aaa1115910/bv/actions/workflows/release.yml)
-[![Workflow Alpha](https://github.com/aaa1115910/bv/actions/workflows/alpha.yml/badge.svg)](https://github.com/aaa1115910/bv/actions/workflows/alpha.yml)
-[![Android Sdk Require](https://img.shields.io/badge/Android-5.0%2B-informational?logo=android)](https://apilevels.com/#:~:text=Jetpack%20Compose%20requires%20a%20minSdk%20of%2021%20or%20higher)
-[![GitHub](https://img.shields.io/github/license/aaa1115910/bv)](https://github.com/aaa1115910/bv)
-
 **BV 无法在中国大陆地区内的智能电视上使用，如有相关使用需求请使用 [云视听小电视](https://app.bilibili.com)**
 
 **禁止在中国境内传播、宣传、分发 BV**
@@ -21,6 +11,13 @@
 </div>
 
 ---
+
+## 个人自用学习版本 r848
+
+- 强制 TV 模式
+- 解除一些限制
+- 简化动画，减少卡顿 （ 大概吧
+
 BV ~~(Bug Video)~~ 是一款 [哔哩哔哩](https://www.bilibili.com) 的第三方应用，适配 `Android 移动端`
 和 `Android TV`，使用 `Jetpack Compose` 开发，支持 `Android 5.0+`
 

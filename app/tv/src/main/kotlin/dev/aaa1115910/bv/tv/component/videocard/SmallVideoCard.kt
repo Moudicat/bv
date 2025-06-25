@@ -100,11 +100,7 @@ fun SmallVideoCardContent(
         animationSpec = spring(),
         label = "info scale"
     )*/
-    val infoOffsetY by animateDpAsState(
-        targetValue = if (hasFocus) 8.dp else 0.dp,
-        animationSpec = spring(),
-        label = "info offset y"
-    )
+    val infoOffsetY = if (hasFocus) 8.dp else 0.dp
 
     Column(
         modifier = modifier
@@ -129,7 +125,8 @@ fun SmallVideoCardContent(
                 cover = data.cover,
                 play = data.playString,
                 danmaku = data.danmakuString,
-                time = data.timeString
+                time = data.timeString,
+                hasFocus = hasFocus
             )
         }
 
@@ -231,7 +228,8 @@ fun CardCover(
     cover: String,
     play: String,
     danmaku: String,
-    time: String
+    time: String,
+    hasFocus: Boolean
 ) {
     var width by remember { mutableStateOf(200.dp) }
     val showInfo by remember { derivedStateOf { width > 160.dp } }
@@ -242,10 +240,7 @@ fun CardCover(
     ) {
         val boxWithConstraintsScope = this
         width = boxWithConstraintsScope.maxWidth
-        val shadowAlpha by animateFloatAsState(
-            targetValue = if (showInfo) 0.8f else 0f,
-            label = "shadow alpha"
-        )
+        val shadowAlpha = if (hasFocus) 1f else 0f
 
         AsyncImage(
             modifier = Modifier
