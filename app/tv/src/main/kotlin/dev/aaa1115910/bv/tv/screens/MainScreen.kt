@@ -21,6 +21,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -76,14 +77,22 @@ fun MainScreen(
     val pgcFocusRequester = remember { FocusRequester() }
     val searchFocusRequester = remember { FocusRequester() }
 
+    val scope = rememberCoroutineScope()
+
     val handleBack = {
-        val currentTime = System.currentTimeMillis()
-        if (currentTime - lastPressBack < 1000 * 3) {
-            logger.fInfo { "Exiting bug video" }
-            (context as Activity).finish()
+        if (drawerState.isOpen) {
+            scope.launch {
+                drawerState.close()
+            }
         } else {
-            lastPressBack = currentTime
-            R.string.home_press_back_again_to_exit.toast(context)
+            val currentTime = System.currentTimeMillis()
+            if (currentTime - lastPressBack < 1000 * 3) {
+                logger.fInfo { "Exiting bug video" }
+                (context as Activity).finish()
+            } else {
+                lastPressBack = currentTime
+                R.string.home_press_back_again_to_exit.toast(context)
+            }
         }
     }
 
